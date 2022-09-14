@@ -5,7 +5,7 @@ import { carMock, carMockWithId } from '../../mocks/carMock';
 import CarModel from '../../../models/Car';
 const { expect } = chai;
 
-describe('Car Model', () => {
+describe('Cars Model', () => {
   const carModel = new CarModel()
   before(async () => {
     sinon
