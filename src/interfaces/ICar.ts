@@ -7,7 +7,7 @@ const CarZodSchema = z.object({
   seatsQty: z.number().gte(2).lte(7),
 });
 
-const FullCar = VehicleZodSchema.merge(CarZodSchema);
-type ICar = z.infer<typeof FullCar>;
+const FullCarZodSchema = VehicleZodSchema.merge(CarZodSchema);
+type ICar = z.infer<typeof FullCarZodSchema>;
 
-export { ICar, CarZodSchema };
+export { ICar, FullCarZodSchema };
