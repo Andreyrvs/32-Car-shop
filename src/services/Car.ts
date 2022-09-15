@@ -1,6 +1,7 @@
 import IService from '../interfaces/IService';
 import { ICar, FullCarZodSchema } from '../interfaces/ICar';
 import { IModel } from '../interfaces/IModel';
+import { ErrorTypes } from '../errors/catalog';
 
 class CarService implements IService<ICar> {
   private _car:IModel<ICar>;
@@ -25,8 +26,13 @@ class CarService implements IService<ICar> {
     const car = await this._car.readOne(_id);
 
     if (!car) {
-      throw new Error('EntityNotFound');
+      throw new Error(ErrorTypes.ObjectNotFound);
     }
+
+    if (_id.length < 24) {
+      throw new Error('Id must have 24 hexadecimal characters');
+    }
+
     return car;
   }
 
@@ -37,7 +43,7 @@ class CarService implements IService<ICar> {
     }
     const car = await this._car.update(_id, parsed.data);
     if (!car) {
-      throw new Error('EntityNotFound');
+      throw Error(ErrorTypes.EntityNotFound);
     }
 
     return car;
@@ -46,7 +52,7 @@ class CarService implements IService<ICar> {
   public async delete(_id:string):Promise<ICar> {
     const car = await this._car.delete(_id);
     if (!car) {
-      throw new Error('EntityNotFound');
+      throw Error(ErrorTypes.EntityNotFound);
     }
 
     return car;
