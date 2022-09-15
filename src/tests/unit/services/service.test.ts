@@ -74,6 +74,6 @@ describe('Cars Service', () => {
 
   //     expect(error).to.be.deep.equal(ErrorTypes.ObjectNotFound);
   //   });
-  // });
+  });
 
 });
