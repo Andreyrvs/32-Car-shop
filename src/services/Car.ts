@@ -43,7 +43,7 @@ class CarService implements IService<ICar> {
     }
     const car = await this._car.update(_id, parsed.data);
     if (!car) {
-      throw Error(ErrorTypes.InvalidMongoId);
+      throw Error(ErrorTypes.ObjectNotFound);
     }
 
     return car;
