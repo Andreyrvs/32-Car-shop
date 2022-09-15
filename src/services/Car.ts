@@ -30,7 +30,7 @@ class CarService implements IService<ICar> {
     }
 
     if (_id.length < 24) {
-      throw new Error('Id must have 24 hexadecimal characters');
+      throw new Error(ErrorTypes.InvalidMongoId);
     }
 
     return car;
