@@ -38,5 +38,13 @@
     "buyValue": 350000,
     "seatsQty": 2,
     "doorsQty": 2
+  },
+  {
+    "model": "Diablo",
+    "year": 2001,
+    "color": "Silver",
+    "buyValue": 300000,
+    "seatsQty": 2,
+    "doorsQty": 2
   }
 ]
