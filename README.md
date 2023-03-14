@@ -81,3 +81,17 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   ```bash
   npm run dev
   ```
+
+## Executando testes
+
+- Para rodar os testes:
+
+  ```bash
+  npm run test:dev
+  ```
+
+- Para rodar a cobertura de testes:
+
+  ```bash
+  npm run test:coverage
+  ```
