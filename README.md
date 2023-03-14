@@ -48,12 +48,18 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   cd 32-car-shop
   ```
 
+  > Banco de dados
+
+  ```bash
+  docker run --name mongodb -p 27017:27017 -d mongo
+  ```
+
   > Docker
 
   Rode os serviços **node** e **mongodb** com o comando:
 
   ```bash
-  docker-compose up -d
+  docker compose up -d
   ```
 
   Esses serviços irão inicializar um container chamado `car_shop` e outro chamado `car_shop_db`.
@@ -61,6 +67,8 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   ```bash
   docker exec -it car_shop bash
   ```
+
+
 
   > Back-end
 
