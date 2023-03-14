@@ -50,13 +50,13 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
   > Docker
 
-  Rode os serviços node e mongodb com o comando:
+  Rode os serviços **node** e **mongodb** com o comando:
 
   ```bash
   docker-compose up -d
   ```
 
-  Esses serviços irão inicializar um container chamado car_shop e outro chamado car_shop_db.
+  Esses serviços irão inicializar um container chamado `car_shop` e outro chamado `car_shop_db`.
 
   ```bash
   docker exec -it car_shop bash
