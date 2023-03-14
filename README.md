@@ -68,8 +68,6 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   docker exec -it car_shop bash
   ```
 
-
-
   > Back-end
 
   ```bash
