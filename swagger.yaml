@@ -68,7 +68,7 @@ paths:
       parameters:
         - name: carId
           in: path
-          description: ID of car to return
+          description: Retorna ID do carro . use `_id` pego na roda **/cars**
           required: true
           schema:
             type: string

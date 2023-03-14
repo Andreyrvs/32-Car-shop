@@ -79,16 +79,15 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 - Para restaurar o Banco de dados use `mongoimport`:
 
   ```bash
-  mongoimport --db=CarShop --jsonArray --file=cars.json
+  mongoimport --db=CarShop --collection=cars --jsonArray --file=cars.json
   ```
 
-  Ira aparecer isso:
+  Ira aparecer algo como:
 
   ```bash
-  2023-03-14T18:53:08.273-0300 no collection specified
-  2023-03-14T18:53:08.273-0300 using filename 'cars' as collection
-  2023-03-14T18:53:08.275-0300 connected to: mongodb://localhost/
-  2023-03-14T18:53:08.276-0300 5 document(s) imported successfully. 0 document(s) failed to import.
+  2023-03-14T19:51:10.567-0300 connected to: mongodb://localhost/
+  2023-03-14T19:51:10.569-0300 5 document(s) imported successfully. 0 document(s) failed to import.
+
   ```
 
   Usando o `mongosh` faça um **find** no banco de dados e verifique se foram carregado os carros:
