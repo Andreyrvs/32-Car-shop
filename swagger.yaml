@@ -24,6 +24,26 @@ tags:
     description: Endpoints related to Cars data
 paths:
   /cars:
+    post:
+      tags: 
+        - Cars
+      summary: Novo Carro
+      description: Adiciona um novo carro ao banco de dados
+      responses:
+        '201':
+          description: 'Created'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cars'
+        '400':
+          description: 'Bad Request - Quanto falta um item ou o nome está errado'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/400BadRequest'
     get:
       tags: 
         - Cars
@@ -38,6 +58,30 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Cars'
+  
+  /cars/{carId}:
+    get:
+      tags: 
+        - Cars
+      summary: Novo Carro
+      description: Adiciona um novo carro ao banco de dados
+      parameters:
+        - name: carId
+          in: path
+          description: ID of car to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cars'
+
 components:
   schemas:
     Cars:
@@ -64,3 +108,34 @@ components:
         doorsQty:
           type: integer
           example: 2
+   
+    400BadRequest:
+      type: object
+      properties:
+        error:
+          $ref:  '#/components/schemas/ErrorArray' 
+    ErrorArray:
+      type: array
+      items:
+        $ref:  '#/components/schemas/ErrorBody' 
+    ErrorBody:
+      type: object
+      properties:
+        code:
+          type: string
+          example: 'invalid_type'
+        expected:
+          type: string
+          example: 'number' 
+        received:
+          type: string
+          example: 'undefined'
+        path:
+          type: string
+          example:
+            - doorsQty
+            - seatsQty
+        message:
+          type: string
+          example: Required
+
