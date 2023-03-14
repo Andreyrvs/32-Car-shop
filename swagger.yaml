@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: Car Shop - OpenAPI 3.0
+  version: 0.1.0
+  description: >-
+    Este projeto trata-se de aplicar os princípios de Programação Orientada a Objetos (POO)
+    para a construção de uma API com CRUD para gerenciar uma concessionária de veículos. 
+    Isso será feito utilizando o banco de dados MongoDB.
+
+
+    Alguns links úteis:
+
+    - [Repositorio da API](https://github.com/Andreyrvs/32-car-shop)
+
+contact:
+  email: cortaesai@gmail.com
+  name: Andrey R. Visniewski
+  url: https://www.linkedin.com/in/andreyrv/
+servers:
+  - url: http://localhost:3001/
+  - url: railway aqui
+tags:
+  - name: Cars
+    description: Endpoints related to Cars data
+paths:
+  /cars:
+    get:
+      tags: 
+        - Cars
+      summary: Carros
+      description: Lista todos carros no bando de dados
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cars'
+components:
+  schemas:
+    Cars:
+      type: object
+      properties:
+        _id:
+          type: integer
+          example: "6410ded8f3b9abea6c497729"
+        model:
+          type: string
+          example: Lamborghini diablo
+        year:
+          type: integer
+          example: 2001
+        color:
+          type: string
+          example: red
+        buyValue:
+          type: integer
+          example: 2400000
+        seatsQty:
+          type: integer
+          example: 2
+        doorsQty:
+          type: integer
+          example: 2
