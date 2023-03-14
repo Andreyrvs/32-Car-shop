@@ -98,9 +98,9 @@ Adquiri essas habilidades ao desenvolver esse projeto:
   ```
 
   |.    | Ou Usando o `MongoDB Compass` Click no Find (1), resultado (2) |.      |
-  | --- | :---:                                                        | --- |
-  |     | ![Image](./Readme-images/aplicacao-home2.webp) |              |       |
-  |.    |                                                              |.      |
+  | --- | :---:                                                          | ---   |
+  |     | ![Image](./Readme-images/aplicacao-home2.webp) |               |       |
+  |.    |                                                                |.      |
 
 - Para rodar o Back-end:
 
