@@ -76,6 +76,32 @@ Adquiri essas habilidades ao desenvolver esse projeto:
 
 ## Executando aplicação
 
+- Para restaurar o Banco de dados use `mongoimport`:
+
+  ```bash
+  mongoimport --db=CarShop --collection=cars --jsonArray --file=cars.json
+  ```
+
+  Ira aparecer algo como:
+
+  ```bash
+  2023-03-14T19:51:10.567-0300 connected to: mongodb://localhost/
+  2023-03-14T19:51:10.569-0300 5 document(s) imported successfully. 0 document(s) failed to import.
+
+  ```
+
+  Usando o `mongosh` faça um **find** no banco de dados e verifique se foram carregado os carros:
+
+  ```bash
+  use CarShop
+  db.cars.find({})
+  ```
+
+  |.    | Ou Usando o `MongoDB Compass` Click no Find (1), resultado (2) |.      |
+  | --- | :---:                                                          | ---   |
+  |     | ![Image](./Readme-images/aplicacao-home2.webp) |               |       |
+  |.    |                                                                |.      |
+
 - Para rodar o Back-end:
 
   ```bash
