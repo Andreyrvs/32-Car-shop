@@ -29,6 +29,12 @@ paths:
         - Cars
       summary: Novo Carro
       description: Adiciona um novo carro ao banco de dados
+      requestBody:
+        description: Cria um carro na loja
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarsPut'
       responses:
         '201':
           description: 'Created'
@@ -63,15 +69,42 @@ paths:
     get:
       tags: 
         - Cars
-      summary: Novo Carro
-      description: Adiciona um novo carro ao banco de dados
+      summary: Carro
+      description: Retorna um carro com seus respectivos dados
       parameters:
         - name: carId
           in: path
-          description: Retorna ID do carro . use `_id` pego na roda **/cars**
+          description: Busque o carro pelo ID. use `_id` pego na roda **/cars**
           required: true
           schema:
             type: string
+      responses:
+        '200':
+          description: 'OK'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Cars'
+    put:
+      tags: 
+        - Cars
+      summary: Carro
+      description: Retorna um carro com seus respectivos dados
+      parameters:
+        - name: carId
+          in: path
+          description: Busque o carro pelo ID. use `_id` pego na roda **/cars**
+          required: true
+          schema:
+            type: string
+      requestBody:
+        description: Atualiza um carro existente na loja
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CarsPut'
       responses:
         '200':
           description: 'OK'
@@ -102,6 +135,28 @@ components:
         buyValue:
           type: integer
           example: 2400000
+        seatsQty:
+          type: integer
+          example: 2
+        doorsQty:
+          type: integer
+          example: 2
+    
+    CarsPut:
+      type: object
+      properties:
+        model:
+          type: string
+          example: Lamborghini Aventator SVJ Roadster
+        year:
+          type: integer
+          example: 2023
+        color:
+          type: string
+          example: gold
+        buyValue:
+          type: integer
+          example: 60909472
         seatsQty:
           type: integer
           example: 2
